@@ -13,6 +13,8 @@ Note that the dataset for the North Sea Wells (dataset A) are compiled from [thi
 
 The dataset is withheld to protect the originality of the code
 
+In the case if a code is not properly rendered by Github, one could use [NBviewer](https://nbviewer.org/) as an alternative.
+
 ## Table of Contents
 There are four folders which are presented within the repository:
 1) **Lithology Prediction** (classification task): For the three North Sea wells, acting as the blind well. For each of the wells, 3 conventional ML algorithms (Support Vector Classifier, SVC; Random Forest, RF; and Extreme Gradient Boosting; XGB) are compared with several AutoDL algorithms (Artifical Neural Network/Feed-Forward, FF; and Convolutional Neural Network; CNN). Varying scaling mechanisms and numbers of trials-epochs are tested
@@ -65,10 +67,16 @@ for **$V_s$ Prediction**:
 2. Several .*csv files of the predicted $V_s$ will be generated, such as `well_XX_Vs_pred_SVM.csv`, `well_XX_Vs_pred_RF.csv`, `well_XX_Vs_pred_XGB.csv`, `well_XX_Vs_pred_FF1.csv`, `well_XX_Vs_pred_FF2_T100_E3.csv`, `well_XX_Vs_pred_FF3.csv`, `well_XX_Vs_pred_FF4_T100_E3.csv`, `well_XX_Vs_pred_CNN1_T100_E1.csv`, and `well_XX_Vs_pred_CNN2_T100_E1.csv`
 3. Run the `combine_result_wellXX_Vs.csv` to compile the results into one figure. For the three wells, then these figures are combined vertically using third-party website such as [this website](https://pinetools.com/merge-images) in order to generate **Figure 4** in the manuscript.
 
-for **TOC Prediction (Scenario 1)**
+for **TOC Prediction (Scenario 1)**:
 1. For well XX (Well Maxhamish, McAdam, or Komie), run all the `TOC_S1_AutoDL_XX_ALGO.ipynb` and `TOC_S1_ML_XX_CONV.ipynb` notebooks. 
-2. Several .*csv files of the predicted TOC (only for the points where actual TOC is known) will be generated, such as `TOC_Pred_XX_CONV.csv`, `TOC_Pred_XX_FF1_FF2.csv`, `TOC_Pred_XX_FF3_FF4.csv`, `TOC_Pred_XX_CNN1.csv`, `TOC_Pred_XX_CNN2.csv`, `TOC_Pred_XX_CNN3.csv`, and `TOC_Pred_XX_CNN4.csv`.
+2. Several .*csv files of the predicted TOC (only for the points where actual TOC is known, using TOC-related, elastic, and well-logs parameters) will be generated, such as `TOC_Pred_XX_CONV.csv`, `TOC_Pred_XX_FF1_FF2.csv`, `TOC_Pred_XX_FF3_FF4.csv`, `TOC_Pred_XX_CNN1.csv`, `TOC_Pred_XX_CNN2.csv`, `TOC_Pred_XX_CNN3.csv`, and `TOC_Pred_XX_CNN4.csv`.
 3. Run the `combine_result_XX_TOC_S1.csv` to compile the results into one figure. For the three wells, then these figures are combined vertically using third-party website such as [this website](https://pinetools.com/merge-images) in order to generate **Figure 5** in the manuscript. The RMSE and $R$ values for each algorithm is obtained in these notebooks (**Table 6** in the manuscript)
+
+for **TOC Prediction (Scenario 2)**:
+1. For well XX (Well Maxhamish, McAdam, or Komie), run all the `TOC_S2_AutoDL_XX_ALGO.ipynb` and `TOC_S2_ML_XX_CONV.ipynb` notebooks.
+2. Several .*csv files of the predicted TOC (only for the points where actual TOC is known, but not using the TOC-related parameters; only using elastic and well-logs parameters; so that later the whole points of the well can be predicted) will be generated, such as `TOC_Pred_XX_CONV_rerun.csv`, `TOC_Pred_XX_FF1_FF2_rerun.csv`, `TOC_Pred_XX_FF3_FF4_rerun.csv`, `TOC_Pred_XX_CNN1_rerun.csv`, `TOC_Pred_XX_CNN2_rerun.csv`, `TOC_Pred_XX_CNN3_rerun.csv`, and `TOC_Pred_XX_CNN4_rerun.csv`.
+3. Run the `combine_result_XX_TOC_S2.csv` to compile the results into one figure. For the three wells, then these figures are combined vertically using third-party website such as [this website](https://pinetools.com/merge-images) in order to generate **Figure 6** in the manuscript. The RMSE and $R$ values for each algorithm is obtained in these notebooks (**Table 7** in the manuscript)
+4. After observing the RMSE and $R$ values, three best algorithms are choosen: AutoDL FF2, AutoDL FF4, and Conv. XGB. These three algorithm are used to make the model (TOC Interpolation >> `Interpolation_Building_FF2_FF4_XGB.csv`) and later used to interpolate the whole points within the well (TOC Interpolation >> `Interpolation_Result.csv`). **Figures 7** and **8** within the manuscript are obtained from this part. 
 
 ## Contact
 Discussions or questions can be addressed to Nandito Davy's email at nanditodavy96@gmail.com or his office at The Department of Geoscience, College of Petroleum and Geosciences, KFUPM, Dhahran, Kingdom of Saudi Arabia
