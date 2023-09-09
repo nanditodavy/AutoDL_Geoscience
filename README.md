@@ -1,14 +1,17 @@
 # Leveraging Automated Deep Learning (AutoDL) in Geoscience
 
-A new paradigm that generates high-quality pipeline of Machine Learning (ML) or Deep Learning (DL) with less to no human assistance is called AutoML or AutoDL. AutoDL has been implemented in many domains such as computer science, healthcare, natural labguage processing, and many more. However, the implementation of it within the Geoscience domain is not yet seen.
+AutoML or AutoDL is a new paradigm that generates high-quality pipelines of Machine Learning (ML) or Deep Learning (DL) with little to no human assistance. AutoDL has been implemented in many domains such as computer science, healthcare, natural language processing, and many more. However, its implementation within the Geoscience domain has not been seen yet.
 
-In this study, an available open-source package called **Auto-Keras** is utilized, which the furture details and installation procedure for it can be seen in the following link: https://autokeras.com/
+In this study, an available open-source package called Auto-Keras is utilized, which provides further details and installation procedures in the following link: [Auto-Keras](https://autokeras.com/).
+
 
 The codes within this repository explored the possibility of AutoDL (Auto-Keras) implementation for several geoscientific tasks such as: (1) Lithology prediction, (2) S-wave velocity ($V_s$) prediction, and (3) Total Organic Carbon or TOC prediction.
 
 This repository is intended for one of the requirement of Computer and Geoscience Journal, elsevier.
 
-Note that the dataset for the North Sea Wells (dataset A) are compiled from https://github.com/bolgebrygg/MalenoV, while the Horn River Basin dataset (dataset B) is **confidential**. Therefore, the dataset will not be available in this repository.
+Note that the dataset for the North Sea Wells (dataset A) are compiled from [this Github repo](https://github.com/bolgebrygg/MalenoV), while the Horn River Basin dataset (dataset B) is **confidential**. Therefore, the dataset will not be available in this repository.
+
+The dataset is withheld to protect the originality of the code
 
 ## Table of Contents
 There are four folders which are presented within the repository:
